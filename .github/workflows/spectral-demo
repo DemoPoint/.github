@@ -26,5 +26,5 @@ jobs:
           spectral-dsn: ${{ secrets.SPECTRAL_DSN }}
       - name: Scan
         run: spectral scan --ok --include-tags base,audit3,iac
-      - namee: Scan Orgs
+      - name: Scan Orgs
         run: spectral github -k org -t {{ secrets.OFIRSTOKEN }} ACME-Corp-Demo --include-tags base,audit3,iac
