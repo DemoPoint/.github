@@ -12,6 +12,7 @@ env:
 jobs:
   build:
     strategy:
+      fail-fast: false
       matrix:
         orgs: [dome9, alibaba, jeremylong, ciscodevnet,postmanlabs, ACME-Corp-Demo ]
     name: Spectral
