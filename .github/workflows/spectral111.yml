@@ -11,6 +11,9 @@ env:
 
 jobs:
   build:
+    strategy:
+      matrix:
+        orgs: [dome9, alibaba, jeremylong, ciscodevnet,postmanlabs, ACME-Corp-Demo ]
     name: Spectral
     runs-on: ubuntu-latest
     steps:
@@ -23,4 +26,4 @@ jobs:
       - name: Scan
         run: spectral scan --ok --include-tags base,audit3,iac
       - name: Scan Orgs
-        run: spectral github -k org -t ${{ secrets.OFIRSTOKEN }} ACME-Corp-Demo --include-tags base,audit
+        run: spectral github -k org -t ${{ secrets.OFIRSTOKEN }} @${{ matrix.orgs }} --include-tags base
