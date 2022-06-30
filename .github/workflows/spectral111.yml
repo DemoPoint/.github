@@ -27,4 +27,4 @@ jobs:
       - name: Scan
         run: spectral scan --ok --include-tags base,audit3,iac
       - name: Scan Orgs
-        run: spectral github -k org -t ${{ secrets.OFIRSTOKEN }} @${{ matrix.orgs }} --include-tags base,audit
+        run: spectral github -k org -t ${{ secrets.OFIRSTOKEN }} ${{ matrix.orgs }} --include-tags base,audit
